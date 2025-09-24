@@ -1,0 +1,16 @@
+Set up a roboflow account and add them to a ground project.
+
+Meeting:
+What are some methods used for blob detection?
+Greyscale images, Laplacian and Gaussian to make edges clear
+
+How can blob detection be used to find objects in a field? What are its benefits and limitations?
+Help find edges and identify objects.
+
+
+What are the underlying mechanics of the convolutional neural network used in the YOLO model?
+It assigns weights to the hidden layers, and these weights are learned by minimizing the loss function
+
+How can our club leverage our manpower to label many images in a short amount of time on roboflow? (Teach them how to use roboflow so that when we need to label a bunch of images quickly, we can use the built in roboflow tools to mobilize quickly)
+What are some upsides and downsides to using YOLO for our competition vehicle?
+What other techniques might there be for object detection?
