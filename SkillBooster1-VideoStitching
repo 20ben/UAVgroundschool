@@ -1,0 +1,25 @@
+import cv2
+
+minecraft_video = cv2.VideoCapture('Minecraft_stitch_test.mp4')
+
+# Going frame by frame (every 2 sec) through the video and stiching image together.
+
+ret, og_image = minecraft_video.read()
+
+time_interval = 0
+frames = []
+
+while True:
+    
+    minecraft_video.set(cv2.CAP_PROP_POS_MSEC, time_interval * 1000)
+    ret, frame = minecraft_video.read()
+    
+    if not ret:
+        break
+    
+    frames.append(frame)
+    time_interval += 2 
+
+stitcher = cv2.Stitcher_create(cv2.Stitcher_SCANS)
+status, full = stitcher.stitch(frames)
+cv2.imwrite("minecraft_map.jpg", full)
