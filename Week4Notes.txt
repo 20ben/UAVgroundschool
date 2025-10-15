@@ -1,0 +1,36 @@
+What is the role of a flight controller in a drone system, and how does it differ from an onboard computer (like a Jetson)?
+
+Flight controller does basic things to make sure that the drone does not crash...typically has sensors. Gets instructions from onboard computer or person.
+
+Jetson can run operating systems
+
+
+What sensors are typically connected to a flight controller?
+IMU, accelerometers (uses gravity, can give you angular velocity and acceleration), barometer (pressure sensor), gps and magnetometer (compass), rgb cameras
+
+RTK: Real time kinematics, can get within half a meter or less within x, y, z with the satelites. This can also give us velocity given our constant stream of data.
+
+
+
+What are the key communication protocols between flight controllers and peripherals (e.g. I2C, CAN, MAVLink)?
+
+Serial - UART:
+- Very popular communication protocol. This is for the communication between the flight computer and onboard computer...needs wires with some connected to ground...that way it can know the voltage difference relative to this.
+
+CAN - Controller Area Network:
+- Used in cars/drones. more for group chat communication.
+
+SPI / I2C:
+The clock keeps everything in line...the heart of the system. 
+
+MAVLink - Micro Air Vehicle Link:
+- Kinda like software
+Interprets the previous communication protocols and translates it to readable format.
+- Communication between the drone and the ground station. But can be slow sometimes..
+
+DDS - Data Distribution Service:
+- For communication inside the drone...made for constant communication
+
+How does firmware (e.g. Betaflight) influence the capabilities of the flight controller?
+
+PID is pretty cool, observing the past and the future using derivatives and integrals
