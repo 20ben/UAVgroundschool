@@ -1,0 +1,16 @@
+How do we communicate with the drone while it’s in the air?
+
+We have a radio and ground station. The protocols for transmitting is called UDP and TCP. UDP just throws stuff out while TCP establishes good connection first (but also slower).
+
+What is the role of the onboard computer system and how does it complement the flight controller? How does it communicate?
+
+headless -> no display
+it uses Linux cuz fast, and ROS also runs good on it
+
+What are the trade-offs between different data links (WiFi, radio, LTE)?
+
+Wifi is fast and common. Better for short range communications, has limited range (few hundred meters). Can get blocked by walls. Radio is really long range, but less data can be sent and needs dedicated hardware. LTE is really good and very wide coverage. Line of sight is not needed, however there are "dead zones".
+
+
+How does the onboard computer connect to the ground station or other devices over WiFi? (SSH tutorial)
+We went over this process with SSHing to a Linux virtual machine in class!
